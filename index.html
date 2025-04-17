@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC MASTER EXPRESS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="efect.js">
+    <link rel="shortcut icon" href="images/001-technical-support.png" type="image/x-icon">
+    <meta name="application-name" content="proecodeal">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="google" content="notranslate" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta itemprop="image" content="images/001-technical-support.png">
+    <meta itemprop="address" content="Salinas, Av Quito">
+
+</head>
+
+<body>
+
+    <section class="header">
+        <nav style="position: absolute; top: 0; width: 100%;">
+            <a href="index.html"><img src="images/body.png"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                   
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="contacto.html">contacto</a></li>
+                    <li><a href="account.html" class="btn-login">Login</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="text-box">
+            <h1>El futuro esta en nuestras manos.</h1>
+            <p>En 🔹 PC Masters Express🔹<br>tenemos mantenimientos y equipos de excelente calidad y bajos costos</p>
+            <a href="contacto.html" class="hero-btn">Informate Más</a>
+        </div>
+    </section>
+
+    <!-- AQUI EMPIEZA CON JAVA SCRIPT LOS CODIGO PARA MOSTRAR LOS CARD -->
+    <h2 class="title">Nuevos Productos</h2>
+    <div id="productos" class="small-container"></div>
+    <script src="main.js" defer></script>
+    <!-- AQUI TERMINA EL CARD DE NUEVOS PRODUCTOS-->
+
+    <!-- OFERTA-->
+    <div class="offer">
+        <div class="small-container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="./images/PORT00272.png" class="offer-img">
+                </div>
+                <div class="col-2">
+                    <p>Exclusivamente en 🔹PC MASTER Express🔹</p>
+                    <h1>Laptop ASUS TUF Gaming A15 FA506NC-HN039 </h1>
+                    <small>El TUF Gaming A15 es una laptop gaming con Windows Home diseñada para servirte la victoria en bandeja. La nueva GPU NVIDIA GeForce ofrece una gran fluidez gráfica en la pantalla , mientras que la potente CPU AMD Ryzen™ se encuentra respaldada por un nuevo sistema de refrigeración que amplía el rendimiento de la CPU y mantiene un perfil acústico silencioso </small>
+                    <br>
+                    <a href="product-details.html" class="btn"><span>Comprar &#8594;</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor para los otros productos -->
+    <div id="otros-productos" class="small-container">
+        <h2 class="title">Otros Productos</h2>
+    </div>
+    <script src="productos-otros.js"></script>
+
+    <div id="footer"></div>
+    <script src="footer.js"></script>
+
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+</body>
+
+</html>

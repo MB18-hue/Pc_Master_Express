@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Productos PC Master</title>
+    <link rel="shortcut icon" href="images/logopc.png" type="image/x-icon">
+
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <div class="header-cursos">
+            <nav>
+                <a href="index.html"><img src="images/body.png" "></a>
+                    <div class=" nav-links-cursos" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="servicios.html">Servicios</a></li>
+                        <li><a href="productos.html"><strong>Productos</strong></a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+
+                        <li><a href="cart.html"><i class="fas fa-shopping-cart"> Cartera</i></a></li>
+                        <li><a href="">
+
+                        <li><a href="account.html"><i class="fas fa-user"></i></a></li>
+
+                </a></li>
+                </ul>
+        </div>
+
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+       
+        <!---Imagenes productos Presentacion-->
+        <div id="productos"></div>
+
+        <script src="products.js"></script>
+        <div class="page-btn">
+            <span data-page="1">1</span>
+            <span data-page="2">2</span>
+            <span data-page="3">3</span>
+            <span data-page="4">4</span>
+            <span data-page="next">&#8594;</span>
+        </div>
+        <script src="paginacion.js" defer></script>
+        
+
+        <!-- FINAL O FOOTER -->
+
+        <div id="footer"></div>
+        <script src="footer.js"></script>
+
+
+
+        <script>
+
+            var navLinks = document.getElementById("navLinks");
+            function showMenu() {
+                navLinks.style.right = "0";
+            }
+            function hideMenu() {
+                navLinks.style.right = "-200px";
+            }
+
+        </script>
+
+
+
+        <!---  cronometro https://www.youtube.com/watch?v=ecDdq-Md_dg-->
+    </div>
+    </div>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

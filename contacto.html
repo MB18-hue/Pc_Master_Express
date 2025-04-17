@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto | PC Master Express</title>
+  <link rel="shortcut icon" href="images/logopc.png" type="image/x-icon">
+  <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: url('images/banner.jpg') center/cover no-repeat;
+      min-height: 100vh;
+    }
+
+    header {
+      background: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .nav-links li a.active,
+    .nav-links li a:hover {
+      color: #00bcd4;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .formulario-contacto {
+      background: rgba(255, 255, 255, 0.97);
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .formulario-contacto h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .formulario-contacto input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .formulario-contacto .btn {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .formulario-contacto .btn:hover {
+      background-color: #0097a7;
+    }
+
+    .info-urgente {
+      margin-top: 20px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    .info-urgente i {
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header de navegación -->
+  <header>
+    <a href="index.html"><img src="images/body.png" alt="Logo" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <li><a href="contacto.html" class="active">Contacto</a></li>
+      <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cartera</a></li>
+      <li><a href="account.html"><i class="fas fa-user"></i></a></li>
+    </ul>
+  </header>
+
+  <!-- Formulario de contacto -->
+  <main>
+    <section class="formulario-contacto">
+      <h2>Contáctanos</h2>
+      <form action="#" method="POST">
+        <input type="text" name="mensaje" placeholder="Escribe tu mensaje" required />
+        <input type="email" name="correo" placeholder="Correo electrónico" required />
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+
+      <div class="info-urgente">
+        <p><strong>¿Urgente?</strong></p>
+        <p><i class="fas fa-phone-alt"></i> +593 996691773</p>
+        <p><i class="fas fa-envelope"></i> balonmalavemoisesa@gmail.com</p>
+      </div>
+    </section>
+  </main>
+
+
+</body>
+</html>
