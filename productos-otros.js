@@ -28,35 +28,35 @@ const otrosProductos = [
       titulo: 'Polo Blanco',
       estrellas: 4,
       descripcion: '',
-      precio: 'PEN 25.00'
+      precio: '$20.00'
     },
     {
       imagen: 'images/producto4.jpg',
       titulo: 'Funda para Celular',
       estrellas: 4,
       descripcion: '',
-      precio: 'PEN 5.00'
+      precio: '$5.00'
     },
     {
       imagen: 'images/producto5.jpg',
       titulo: 'Esponja Acustica',
       estrellas: 4,
       descripcion: '',
-      precio: 'PEN 20.00'
+      precio: '$20.00'
     },
     {
       imagen: 'images/producto2.jpg',
       titulo: 'Polo Negro',
       estrellas: 3,
       descripcion: '',
-      precio: 'PEN 30.00'
+      precio: '$30.00'
     },
     {
       imagen: 'images/producto1.jpg',
       titulo: 'Polo Azul Oscuro-Reciclado',
       estrellas: 2,
       descripcion: '',
-      precio: 'PEN 35.00'
+      precio: '$ 35.00'
     }
   ];
   
