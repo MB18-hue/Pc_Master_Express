@@ -1,73 +1,121 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.renderProductos = renderProductos;
-var productos = [
+document.addEventListener("DOMContentLoaded", function () {
+    renderProductos("productos");
+});
+
+const productos = [
     {
-        imagen: 'images/producto1.avif',
-        titulo: 'Laptop HP Pavilion Gaming 15-ec1038la - 15.6',
-        precio: '$749.99',
-        estrellas: 4
+        imagen: "images/producto1.jpg",
+        titulo: "Polo Azul Oscuro (Reciclado)",
+        estrellas: 4,
+        precio: "$20.00"
     },
     {
-        imagen: 'images/producto2.avif',
-        titulo: 'HP Victus 15 Gaming Laptop 15.6" FHD IPS 144Hz AMD 7000 Ryzen 5 7535HS',
-        precio: '$799.00',
-        estrellas: 5
+        imagen: "images/producto2.jpg",
+        titulo: "Polo negro (Reciclado)",
+        estrellas: 5,
+        precio: "$20.00"
     },
     {
-        imagen: 'images/laptop3.jpg',
-        titulo: 'Dell Alienware m15 R5 Gaming Laptop | Ryzen 9 | RTX',
-        precio: '$2,850.00',
-        estrellas: 3
+        imagen: "images/producto3.jpg",
+        titulo: "Polo Blanco(Reciclado)",
+        estrellas: 3,
+        precio: "$20.00"
     },
     {
-        imagen: 'images/laptop4.webp',
-        titulo: 'Laptop ASUS ROG STRIX G15, Ryzen 7 6800H, 16GB, SSD 512GB, TX 3050',
-        precio: '$1,750.00',
-        estrellas: 4
+        imagen: "images/producto4.jpg",
+        titulo: "Funda para Celular",
+        estrellas: 4,
+        precio: "$20.00"
+    },
+      {
+        imagen: "images/producto1.jpg",
+        titulo: "Polo Azul Oscuro (Reciclado)",
+        estrellas: 4,
+        precio: "$20.00"
+    },
+    {
+        imagen: "images/producto2.jpg",
+        titulo: "Polo negro (Reciclado)",
+        estrellas: 5,
+        precio: "$20.00"
+    },
+    {
+        imagen: "images/producto3.jpg",
+        titulo: "Polo Blanco(Reciclado)",
+        estrellas: 3,
+        precio: "$20.00"
+    },
+    {
+        imagen: "images/producto4.jpg",
+        titulo: "Funda para Celular",
+        estrellas: 4,
+        precio: "$20.00"
     }
 ];
+
 function renderProductos(contenedorId) {
-    var contenedor = document.getElementById(contenedorId);
-    if (!contenedor) {
-        console.error("No se encontr\u00F3 el contenedor con id \"".concat(contenedorId, "\""));
-        return;
-    }
-    var smallContainer = document.createElement('div');
-    smallContainer.className = 'small-container';
-    var productContainer = document.createElement('div');
-    productContainer.className = 'product-container';
-    productos.forEach(function (producto) {
-        var card = document.createElement('div');
-        card.className = 'product-card';
-        // Imagen
-        var img = document.createElement('img');
+    const contenedor = document.getElementById(contenedorId);
+    if (!contenedor) return;
+
+    const smallContainer = document.createElement("div");
+    smallContainer.className = "small-container";
+
+    const filtro = document.createElement("select");
+    filtro.innerHTML = `
+        <option>Filtrar</option>
+        <option>Alta demanda</option>
+        <option>Populares</option>
+        <option>Precios Altos</option>
+        <option>Precios Bajos</option>
+    `;
+    filtro.addEventListener("change", function () {
+        const valorFiltro = filtro.value;
+        if (valorFiltro === "Precios Altos") {
+            productos.sort((a, b) => parseFloat(b.precio.replace('PEN ', '')) - parseFloat(a.precio.replace('PEN ', '')));
+        } else if (valorFiltro === "Precios Bajos") {
+            productos.sort((a, b) => parseFloat(a.precio.replace('PEN ', '')) - parseFloat(b.precio.replace('PEN ', '')));
+        }
+        renderProductos(contenedorId);  // Volver a renderizar después de aplicar el filtro
+    });
+    smallContainer.appendChild(filtro);
+
+    const titulo = document.createElement("h2");
+    titulo.className = "title";
+    titulo.textContent = "Todos Nuestros Productos";
+    smallContainer.appendChild(titulo);
+
+    const row = document.createElement("div");
+    row.className = "row";
+
+    productos.forEach(producto => {
+        const col = document.createElement("div");
+        col.className = "col-4";
+
+        const img = document.createElement("img");
         img.src = producto.imagen;
-        img.alt = producto.titulo;
-        // Título
-        var title = document.createElement('h4');
-        title.className = 'product-title';
-        title.textContent = producto.titulo;
-        // Estrellas
-        var rating = document.createElement('div');
-        rating.className = 'rating';
-        for (var i = 0; i < 5; i++) {
-            var star = document.createElement('i');
-            star.className = i < producto.estrellas ? 'fa fa-star' : 'fa fa-star-o';
+
+        const h4 = document.createElement("h4");
+        h4.textContent = producto.titulo;
+
+        const rating = document.createElement("div");
+        rating.className = "rating";
+        for (let i = 0; i < 5; i++) {
+            const star = document.createElement("i");
+            star.className = i < producto.estrellas ? "fa fa-star" : "fa fa-star-o";
             rating.appendChild(star);
         }
-        // Precio
-        var price = document.createElement('p');
-        price.className = 'product-price';
-        price.textContent = producto.precio;
-        // Agregar al card
-        card.appendChild(img);
-        card.appendChild(title);
-        card.appendChild(rating);
-        card.appendChild(price);
-        // Agregar al contenedor
-        productContainer.appendChild(card);
+
+        const precio = document.createElement("p");
+        precio.textContent = producto.precio;
+
+        col.appendChild(img);
+        col.appendChild(h4);
+        col.appendChild(rating);
+        col.appendChild(precio);
+        row.appendChild(col);
     });
-    smallContainer.appendChild(productContainer);
+
+    smallContainer.appendChild(row);
+    contenedor.innerHTML = '';  // Limpiar el contenedor antes de agregar nuevos productos
     contenedor.appendChild(smallContainer);
 }
